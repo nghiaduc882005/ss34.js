@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="bang" border="1">
+        <tr>
+            <th>Cell 1 row 1</th>
+            <th>Cell 2 row 2</th>
+            <th>Cell 3 row 3</th>
+        </tr>
+
+    </table>
+    <button onclick="add()">add now</button>
+    <script>
+        function add() {
+            let tb = document.getElementById("bang");
+            let row = tb.insertRow(1);
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+
+            cell1.innerHTML = "1";
+            cell2.innerHTML = "2";
+            cell3.innerHTML = "3"
+
+        }
+    </script>
+</body>
+
+</html>

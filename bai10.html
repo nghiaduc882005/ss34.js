@@ -1,0 +1,33 @@
+Thuộc tính `innerText`, `textContent` và `innerHTML` đều liên quan đến việc thay
+đổi hoặc truy xuất nội dung của một phần tử trên trang web bằng JavaScript. Dưới
+đây là sự khác biệt giữa chúng: 1. `innerText`: Thuộc tính này trả về hoặc thiết
+lập văn bản hiển thị của một phần tử, bỏ qua các thẻ HTML. Nó chỉ hiển thị văn
+bản mà người dùng thực sự nhìn thấy trên trang. Ví dụ: 
+```html
+<div id="myDiv">
+  <p>This is <em>inner</em> text.</p>
+</div>
+``` ```javascript var text = document.getElementById("myDiv").innerText; // Kết
+quả: "This is inner text." ``` 2. `textContent`: Tương tự như `innerText`,
+`textContent` cũng trả về hoặc thiết lập nội dung văn bản của một phần tử, nhưng
+nó bao gồm cả văn bản trong thẻ và không quan tâm đến cách hiển thị của phần tử
+đó. Ví dụ: 
+```html
+<div id="myDiv">
+  <p>This is <em>inner</em> text.</p>
+</div>
+``` ```javascript var text = document.getElementById("myDiv").textContent; //
+Kết quả: "This is inner text." ``` 3. `innerHTML`: Thuộc tính này trả về hoặc
+thiết lập nội dung HTML của một phần tử, bao gồm cả các thẻ HTML. Nó cho phép
+bạn thay đổi cả cấu trúc HTML của phần tử. Ví dụ:
+ ```html
+<div id="myDiv">
+  <p>This is <em>inner</em> text.</p>
+</div>
+``` ```javascript var html = document.getElementById("myDiv").innerHTML; // Kết
+quả: "
+<p>This is <em>inner</em> text.</p>
+" ``` Như vậy, sự khác biệt chính giữa chúng là cách xử lý văn bản và HTML. Khi
+bạn chỉ muốn thao tác với văn bản, bạn có thể sử dụng `innerText` hoặc
+`textContent`, trong khi `innerHTML` cho phép bạn thao tác với cả HTML bên trong
+phần tử.

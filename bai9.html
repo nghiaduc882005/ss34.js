@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="in">
+    <button onclick="change()">edit item</button>
+
+    <ul id="List">
+        <li id="liElement1"><span>Nguyễn Văn An</span> <button onclick="editItem(1)">edit</button></li>
+        <br>
+        <li id="liElement2"><span>Vũ Thị Ba</span> <button onclick="editItem(2)">edit</button></li>
+        <br>
+        <li id="liElement3"><span>Nguyễn Minh Quang</span> <button onclick="editItem(3)">edit</button></li>
+    </ul>
+    <script>
+        function change() {
+            let selectedItem = document.querySelector("ul li.active span");
+            console.log(selectedItem);
+            if (selectedItem) {
+                selectedItem.textContent = document.getElementById("in").value;
+                selectedItem.parentElement.classList.remove("active");
+                document.getElementById("in").value = "";
+            }
+        }
+        function editItem(row) {
+            let list = document.getElementById("List");
+            switch (row) {
+                case 1:
+                    removeActive();
+                    makeActive("liElement1");
+                    break;
+                case 2:
+                    removeActive();
+                    makeActive("liElement2");
+                    break;
+                case 3:
+                    removeActive();
+                    makeActive("liElement3");
+                    break;
+                default:
+                    break;
+            }
+        }
+        function removeActive() {
+            let e1 = document.getElementById("liElement1");
+            let e2 = document.getElementById("liElement2");
+            let e3 = document.getElementById("liElement3");
+            e1.classList.remove("active");
+            e2.classList.remove("active");
+            e3.classList.remove("active");
+
+        }
+        function makeActive(itemId) {
+            let item = document.getElementById(itemId);
+            item.classList.add("active");
+            let input = document.getElementById("in");
+            input.value = item.querySelector("span").textContent;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="bang" border="1">
+        <tr>
+            <th>Cell 1 row 1</th>
+            <th>Cell 2 row 2</th>
+            <th>Cell 3 row 3</th>
+            <th><button onclick="del(this)">delete</button></th>
+
+        </tr>
+        <tr>
+            <th>Cell 1 row 1</th>
+            <th>Cell 2 row 2</th>
+            <th>Cell 3 row 3</th>
+            <th><button onclick="del(this)">delete</button></th>
+
+        </tr>
+        <tr>
+            <th>Cell 1 row 1</th>
+            <th>Cell 2 row 2</th>
+            <th>Cell 3 row 3</th>
+            <th><button onclick="del(this)">delete</button></th>
+
+        </tr>
+    </table>
+    <script>
+
+        function del(row) {
+            let a = row.parentNode.parentNode.rowIndex;
+            document.getElementById("bang").deleteRow(a);
+        }
+        document.write
+    </script>
+</body>
+
+</html>
